@@ -1,0 +1,10 @@
+1. Unzip this file.
+2. In GitHub, open your repository.
+3. Click Add file > Upload files.
+4. Upload everything INSIDE the filmmaker_portfolio_v1 folder.
+5. Commit changes.
+6. Go to Settings > Pages.
+7. Source: Deploy from a branch. Branch: main. Folder: /(root). Save.
+8. Wait 1-3 minutes for the site link.
+
+To update content, edit data/projects.json and upload matching media files into videos, thumbnails, and photos.
