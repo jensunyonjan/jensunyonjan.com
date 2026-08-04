@@ -1,0 +1,784 @@
+---
+const projects = [
+  {
+    title: "NYIMA",
+    duration: "2:03 min",
+    location: "Rhisyango, Nepal & CT, US",
+    thumbnail: "/thumbnails/Nyima-project-one.jpg",
+    video: "/videos/Nyima-project-one.mp4",
+    description:
+      "An untended documentary sequence tracing growth, return, & diasporic connection.",
+    questions: [
+      "How do families unintentionally document history?"
+    ]
+  },
+  {
+    title: "Permanence",
+    duration: "1:17 min",
+    location: "Connecticut, US",
+    thumbnail: "/thumbnails/project-two.jpg",
+    video: "/videos/permanence-project-two.mp4",
+    description:
+      "Exploring identity as layered, evolving, and shaped by time through self-portraiture from Evanescence (2013).",
+    questions: []
+  },
+  {
+    title: "Maple Road",
+    duration: "4:17 min",
+    location: "Connecticut, US",
+    thumbnail: "/thumbnails/project-three.jpg",
+    video: "/videos/maple-road-project-three.mp4",
+    description:
+      "Reflecting on home, memory, and the quiet rituals of communal living during isolation.",
+    questions: []
+  },
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A moving-image portfolio exploring stories, spaces, and memory."
+    />
+
+    <title>JENSUN YONJAN — Filmmaker</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="hero" id="top">
+      <div class="hero-image"></div>
+      <div class="hero-shade"></div>
+
+      <nav>
+        <a class="name" href="#top"></a>
+
+        <div class="nav-links">
+          <a href="#current-film">Current Film</a>
+          <a href="#works">Selected Works</a>
+          <a href="#practice">Practice & Process</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      <div class="hero-content">
+        <h1 class="hero-name">JENSUN YONJAN</h1>
+        <p class="hero-role">Filmmaker</p>
+
+        <h2 class="hero-tagline">
+          <span>Films that explore</span>
+          <span> memory,</span>
+          <span> belonging,</span> 
+          <span> and the spaces between cultures.</span>
+        </h2>
+
+        <a class="enter" href="#current-film">
+          Discover the Current Film ↓
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="current-film" id="current-film">
+        <p class="label">Current Film</p>
+
+        <div class="current-film-heading">
+          <div>
+            <p class="film-status">In Development</p>
+            <h2>Between Looking and Belonging</h2>
+          </div>
+
+          <p class="current-film-description">
+            An observational film that invites viewers into rituals that reveal belonging, collective memory, and cultural inheritance.
+          </p>
+        </div>
+
+        <button
+          class="current-film-still work-image"
+          data-video="/videos/current-film-main.mp4"
+          data-title="Between Looking and Belonging"
+          aria-label="Play Between Looking and Belonging"
+        >
+          <img
+            src="/photos/current-film-main.jpg"
+            alt="Still from Between Looking and Belonging"
+          />
+          <span class="play">Play film ▶</span>
+        </button>
+
+        <!-- PROCESS GRID IMAGES -->
+        <div class="process-grid">
+          <figure>
+            <img
+              src="/photos/process-one.jpg"
+              alt="Location scouting for Between Looking and Belonging"
+            />
+            <figcaption>Field recording/location scouting</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="/photos/process-two.jpg"
+              alt="Editing workstation"
+            />
+            <figcaption>Editing workstation</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="/photos/process-three.jpg"
+              alt="Studio collaboration"
+            />
+            <figcaption>Studio collaboration</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="selected-works" id="works">
+        <p class="label">Selected Works</p>
+
+        <div class="works-grid">
+          {
+            projects.map((project, index) => (
+              <article class="work-card">
+                <p class="work-number">
+                  Work {String(index + 1).padStart(2, "0")}
+                </p>
+
+                <button
+                  class="work-image"
+                  data-video={project.video}
+                  data-title={project.title}
+                  aria-label={`Play ${project.title}`}
+                >
+                  <img
+                    src={project.thumbnail}
+                    alt={`Still from ${project.title}`}
+                  />
+                  <span class="play">Play film ▶</span>
+                </button>
+
+                <div class="work-info">
+                  <p class="work-meta">
+                    {project.duration}
+                  </p>
+
+                  <h2>{project.title}</h2>
+
+                  <p class="work-description">
+                    {project.description}
+                  </p>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="practice" id="practice">
+        <p class="label">Practice & Process</p>
+
+        <div class="two-column">
+          <h2> 
+            The works that continue to shape my artistic language as a filmmaker.
+          </h2>
+
+          <div class="practice-text">
+            <p>
+              Raised between Kathmandu, Nepal and CT, US, I am now based in Brisbane, Australia, where I am pursuing a Master of Cinematic Arts.
+            </p>
+
+            <p>
+              Emerging from experimental media, my films are shaped through close observation, lived relationships, and place-based research, allowing stories to unfold through memory, landscape, and everyday experience.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <p class="label">Contact</p>
+
+        <div class="two-column">
+          <h2>Continue the conversation.</h2>
+
+          <div class="contact-links">
+            <a href="mailto:insertemailadress.com">Email</a>
+            <a href="https://www.instagram.com/jensunyonjan/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="/Jensun_Yonjan_Resume.pdf" download="Jensun_Yonjan_Resume.pdf" target="_blank">Download Resume</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 JENSUN YONJAN</span>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+
+    <dialog id="film-dialog">
+      <button id="close-film">Close ×</button>
+      <video id="film-player" controls playsinline></video>
+      <p id="film-title"></p>
+    </dialog>
+
+       <script>
+      const dialog = document.querySelector("#film-dialog") as HTMLDialogElement;
+      const player = document.querySelector("#film-player") as HTMLVideoElement;
+      const title = document.querySelector("#film-title") as HTMLParagraphElement;
+      const close = document.querySelector("#close-film") as HTMLButtonElement;
+
+      document.querySelectorAll(".work-image").forEach((el) => {
+        const button = el as HTMLButtonElement;
+        button.addEventListener("click", () => {
+          if (player && title && dialog) {
+            player.src = button.dataset.video || "";
+            title.textContent = button.dataset.title || "";
+            dialog.showModal();
+            player.play().catch(() => {});
+          }
+        });
+      });
+
+      function closeFilm() {
+        if (player) {
+          player.pause();
+          player.removeAttribute("src");
+          player.load();
+        }
+        if (dialog) {
+          dialog.close();
+        }
+      }
+
+      if (close) {
+        close.addEventListener("click", closeFilm);
+      }
+
+      if (dialog) {
+        dialog.addEventListener("click", (event) => {
+          if (event.target === dialog) {
+            closeFilm();
+          }
+        });
+      }
+    </script>
+
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --paper: #f1efe9;
+    --ink: #171717;
+    --muted: #6c6963;
+    --line: rgba(23, 23, 23, 0.18);
+    --serif: "Newsreader", Georgia, serif;
+    --sans: "Inter", Arial, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: var(--paper);
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.5;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img,
+  video {
+    display: block;
+    width: 100%;
+  }
+
+  /* HERO SECTION */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: hidden;
+    background: #111;
+    color: white;
+  }
+
+  .hero-image {
+    position: absolute;
+    inset: 0;
+    background: url("/thumbnails/hero.jpg") center / cover no-repeat;
+    transform: scale(1.02);
+    filter: brightness(0.82);
+  }
+
+  .hero-shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.30),
+      rgba(0, 0, 0, 0.68)
+    );
+  }
+
+  nav,
+  .hero-content,
+  .practice,
+  .contact,
+  footer {
+    width: min(calc(100% - 48px), 1440px);
+    margin-inline: auto;
+  }
+
+  nav {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 26px;
+  }
+
+  .name {
+    font-weight: 600;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 0.9rem;
+  }
+
+  nav a,
+  .enter,
+  .contact-links a,
+  footer a {
+    border-bottom: 1px solid transparent;
+  }
+
+  nav a:hover,
+  .enter:hover,
+  .contact-links a:hover,
+  footer a:hover {
+    border-color: currentColor;
+  }
+
+  .hero-content {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    bottom: 9vh;
+    transform: translateX(-50%);
+  }
+
+  .label {
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .hero .hero-name {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(3.6rem, 7vw, 6rem);
+    font-weight: 400;
+    line-height: 0.92;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .hero-role {
+    margin: 14px 0 40px;
+    font-size: 0.85rem;
+    letter-spacing: 0.22em;
+    opacity: 0.75;
+  }
+
+  .hero-tagline {
+    margin: 0 0 40px;
+    max-width: 640px;
+    font-family: var(--serif);
+    font-size: clamp(1.35rem, 2.6vw, 2.4rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-tagline span {
+    display: block;
+  }
+
+  /* CURRENT FILM SECTION */
+  .current-film {
+    width: min(calc(100% - 48px), 1440px);
+    margin-inline: auto;
+    padding-block: 120px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .current-film-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.7fr);
+    gap: 72px;
+    align-items: end;
+    margin-top: 24px;
+    margin-bottom: 48px;
+  }
+
+  .current-film h2 {
+    max-width: 900px;
+    margin: 10px 0 0;
+    font-family: var(--serif);
+    font-size: clamp(3rem, 6vw, 7rem);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+  }
+
+  .film-status {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .current-film-description {
+    max-width: 520px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* CURRENT FILM IMAGE / BUTTON - UNZOOMED */
+  button.current-film-still,
+  .current-film-still {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-bottom: 48px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  .current-film-still img,
+  button.current-film-still img {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    aspect-ratio: unset !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  button.current-film-still:hover img {
+    transform: none !important;
+    scale: 1 !important;
+  }
+
+  /* PROCESS GRID */
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .process-grid figure {
+    margin: 0;
+  }
+
+  .process-grid img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .process-grid figcaption {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* SELECTED WORKS SECTION */
+  .selected-works {
+    width: min(calc(100% - 48px), 1440px);
+    margin-inline: auto;
+    padding-block: 120px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 36px;
+  }
+
+  .work-card {
+    min-width: 0;
+  }
+
+  .work-number,
+  .work-meta {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .work-number {
+    margin-bottom: 14px;
+  }
+
+  .work-image {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    background: #d7d3cb;
+    cursor: pointer;
+  }
+
+  .work-image img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    transition: transform 600ms ease;
+  }
+
+  .work-image:hover img {
+    transform: scale(1.025);
+  }
+
+  .play {
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    border-radius: 999px;
+    padding: 14px 18px;
+    background: rgba(245, 243, 238, 0.94);
+    color: #111;
+    font-size: 0.9rem;
+  }
+
+  .work-image .play {
+    left: 14px;
+    bottom: 14px;
+    padding: 10px 14px;
+    font-size: 0.78rem;
+  }
+
+  .work-info {
+    padding-top: 20px;
+  }
+
+  .work-info h2 {
+    margin: 10px 0 14px;
+    font-family: var(--serif);
+    font-size: clamp(2.1rem, 3.2vw, 4rem);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+  }
+
+  .work-description {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  /* PRACTICE & CONTACT SECTIONS */
+  .practice {
+    padding-block: 100px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .contact {
+    padding-top: 64px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .two-column {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.7fr);
+    gap: 80px;
+  }
+
+  .practice h2 {
+    max-width: 900px;
+    margin: 12px 0 0;
+    font-family: var(--serif);
+    font-size: clamp(3.2rem, 5vw, 5rem);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+  }
+
+  .practice-text {
+    align-self: start;
+    max-width: 560px;
+    padding-top: 24px;
+  }
+
+  .practice-text p {
+    margin-bottom: 24px;
+  }
+
+  .practice-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .contact h2 {
+    max-width: 680px;
+    margin: 12px 0 0;
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding-top: 24px;
+  }
+
+  /* FOOTER */
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 34px;
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  /* VIDEO DIALOG MODAL */
+  dialog {
+    width: min(92vw, 1200px);
+    max-width: none;
+    border: 0;
+    padding: 0;
+    background: #0d0d0d;
+    color: white;
+  }
+
+  dialog::backdrop {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  #close-film {
+    display: block;
+    margin-left: auto;
+    border: 0;
+    padding: 16px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font: inherit;
+  }
+
+  #film-title {
+    margin: 0;
+    padding: 16px;
+  }
+
+  /* RESPONSIVE LAYOUT */
+  @media (min-width: 761px) and (max-width: 1050px) {
+    .works-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .work-card:last-child {
+      grid-column: 1 / -1;
+      width: calc(50% - 14px);
+    }
+  }
+
+  @media (max-width: 760px) {
+    nav,
+    .hero-content,
+    .current-film,
+    .selected-works,
+    .practice,
+    .contact,
+    footer {
+      width: min(calc(100% - 28px), 1440px);
+    }
+
+    .nav-links {
+      gap: 14px;
+    }
+
+    .current-film,
+    .selected-works,
+    .practice,
+    .contact {
+      padding-block: 76px;
+    }
+
+    .current-film-heading,
+    .two-column {
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+
+    .works-grid {
+      grid-template-columns: 1fr;
+      gap: 64px;
+    }
+
+    .work-image img {
+      aspect-ratio: 16 / 10;
+    }
+ 
+    .process-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .play {
+      left: 14px;
+      bottom: 14px;
+    }
+
+    footer {
+      gap: 20px;
+    }
+  }
+  </style>
