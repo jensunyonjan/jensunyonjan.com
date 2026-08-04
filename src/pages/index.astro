@@ -1,38 +1,31 @@
 ---
 const projects = [
+  const projects = [
   {
     title: "NYIMA",
     duration: "2:03 min",
     location: "Rhisyango, Nepal & CT, US",
-    thumbnail: "/thumbnails/Nyima-project-one.jpg",
-    video: "/videos/Nyima-project-one.mp4",
-    description:
-      "An untended documentary sequence tracing growth, return, & diasporic connection.",
-    questions: [
-      "How do families unintentionally document history?"
-    ]
+    thumbnail: "./thumbnails/Nyima-project-one.jpg", // 👈 Added a . here
+    video: "./videos/Nyima-project-one.mp4",         // 👈 Added a . here
+    description: "An untended documentary sequence...",
+    questions: ["How do families..."]
   },
   {
     title: "Permanence",
     duration: "1:17 min",
-    location: "Connecticut, US",
-    thumbnail: "/thumbnails/project-two.jpg",
-    video: "/videos/permanence-project-two.mp4",
-    description:
-      "Exploring identity as layered, evolving, and shaped by time through self-portraiture from Evanescence (2013).",
-    questions: []
+    thumbnail: "./thumbnails/project-two.jpg",       // 👈 Added a . here
+    video: "./videos/permanence-project-two.mp4",     // 👈 Added a . here
+    description: "Exploring identity as layered..."
   },
   {
     title: "Maple Road",
     duration: "4:17 min",
-    location: "Connecticut, US",
-    thumbnail: "/thumbnails/project-three.jpg",
-    video: "/videos/maple-road-project-three.mp4",
-    description:
-      "Reflecting on home, memory, and the quiet rituals of communal living during isolation.",
-    questions: []
-  },
+    thumbnail: "./thumbnails/project-three.jpg",     // 👈 Added a . here
+    video: "./videos/maple-road-project-three.mp4",   // 👈 Added a . here
+    description: "Reflecting on home, memory..."
+  }
 ];
+
 ---
 
 <!DOCTYPE html>
@@ -105,12 +98,12 @@ const projects = [
 
         <button
           class="current-film-still work-image"
-          data-video="/videos/current-film-main.mp4"
+          data-video="./videos/current-film-main.mp4"
           data-title="Between Looking and Belonging"
           aria-label="Play Between Looking and Belonging"
         >
           <img
-            src="/photos/current-film-main.jpg"
+            src="./photos/current-film-main.jpg"
             alt="Still from Between Looking and Belonging"
           />
           <span class="play">Play film ▶</span>
@@ -120,7 +113,7 @@ const projects = [
         <div class="process-grid">
           <figure>
             <img
-              src="/photos/process-one.jpg"
+              src="./photos/process-one.jpg"
               alt="Location scouting for Between Looking and Belonging"
             />
             <figcaption>Field recording/location scouting</figcaption>
@@ -128,7 +121,7 @@ const projects = [
 
           <figure>
             <img
-              src="/photos/process-two.jpg"
+              src="./photos/process-two.jpg"
               alt="Editing workstation"
             />
             <figcaption>Editing workstation</figcaption>
@@ -136,7 +129,7 @@ const projects = [
 
           <figure>
             <img
-              src="/photos/process-three.jpg"
+              src="./photos/process-three.jpg"
               alt="Studio collaboration"
             />
             <figcaption>Studio collaboration</figcaption>
@@ -214,7 +207,7 @@ const projects = [
           <div class="contact-links">
             <a href="mailto:insertemailadress.com">Email</a>
             <a href="https://www.instagram.com/jensunyonjan/" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="/Jensun_Yonjan_Resume.pdf" download="Jensun_Yonjan_Resume.pdf" target="_blank">Download Resume</a>
+            <a href="./Jensun_Yonjan_Resume.pdf" download="Jensun_Yonjan_Resume.pdf" target="_blank">Download Resume</a>
           </div>
         </div>
       </section>
